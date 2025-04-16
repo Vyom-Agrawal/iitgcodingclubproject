@@ -281,11 +281,16 @@ img {
     border-radius: 1.5px;
 }
 
+#past-events {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
 /* --- Specific Page Sections --- */
 
 /* Events Page */
 .event-item {
-    background-color: #fff7f7;
+    background-color: #fefff1;
     padding: 1.5rem;
     margin-bottom: 2rem;
     border-radius: var(--border-radius);
@@ -373,17 +378,120 @@ img {
 }
 
 /* Resources Page */
+.resource-category {
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid #2a3990;
+}
+
+.resource-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
 .resource-category h2 {
-    border-bottom: 2px solid var(--primary-color);
+    color: #2a3990;
+    margin-bottom: 1rem;
     padding-bottom: 0.5rem;
-    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #2a3990;
 }
+
 .resource-category ul {
-    list-style: disc; /* Add bullets back for resources */
-    padding-left: 1.5rem; /* Indent list */
+    list-style-type: none;
+    padding-left: 0;
 }
+
 .resource-category li {
     margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.resource-category li:before {
+    content: "•";
+    color: #2a3990;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.resource-category a {
+    color: #2a3990;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.resource-category a:hover {
+    color: #ff5722;
+    text-decoration: underline;
+}
+
+/* Special styling for tutorials section */
+#tutorials {
+    background-color: #f0f8ff;
+    border-left: 4px solid #4285f4;
+}
+
+#tutorials h2 {
+    color: #4285f4;
+    border-bottom-color: #4285f4;
+}
+
+#tutorials li:before {
+    color: #4285f4;
+}
+
+#tutorials a {
+    color: #0056b3;
+}
+
+/* Special styling for tools section */
+#tools {
+    background-color: #f0fff4;
+    border-left: 4px solid #34a853;
+}
+
+#tools h2 {
+    color: #34a853;
+    border-bottom-color: #34a853;
+}
+
+#tools li:before {
+    color: #34a853;
+}
+
+#tools a {
+    color: #1e7e34;
+}
+
+/* Special styling for communities section */
+#communities {
+    background-color: #fff8f0;
+    border-left: 4px solid #ea4335;
+}
+
+#communities h2 {
+    color: #ea4335;
+    border-bottom-color: #ea4335;
+}
+
+#communities li:before {
+    color: #ea4335;
+}
+
+#communities a {
+    color: #c23321;
+}
+
+/* Consistent hover color for all resource links */
+.resource-category a:hover {
+    color: #ff5722;
+    text-decoration: underline;
 }
 
 /* Members Page */
@@ -400,14 +508,7 @@ img {
     text-align: center;
     box-shadow: var(--box-shadow);
 }
-.member-profile img {
-    border-radius: 50%; /* Circular images */
-    margin: 0 auto 1rem auto; /* Center image */
-    width: 120px; /* Fixed size */
-    height: 120px;
-    object-fit: cover; /* Ensure image covers space */
-    border: 3px solid var(--background-color);
-}
+
 .member-profile h4 {
     margin-bottom: 0.2rem;
     color: var(--primary-color);
@@ -417,6 +518,7 @@ img {
     color: var(--secondary-color);
     margin-bottom: 0.8rem;
     font-size: 0.9em;
+    padding: 0.2rem 0.5rem;
 }
 
 .testimonials blockquote {
@@ -437,10 +539,30 @@ img {
 
 .join-us {
     text-align: center;
-    background-color: #fff;
+    background-color: #e6e6e6;
     padding: 3rem 1rem;
     border-radius: var(--border-radius);
     margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Club Leaders heading on members page */
+#profiles h2 {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding-bottom: 0.3rem;
+}
+
+#profiles h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 1.5px;
 }
 
 /* Quick Links Section */
@@ -583,6 +705,7 @@ img {
     box-shadow: var(--box-shadow); /* Subtle shadow */
     animation: fadeInUp 1s ease-in-out; /* Keep the existing animation */
     margin-top: 2rem; /* Space from the top */
+    margin-bottom: 40px;
 }
 
 @keyframes fadeInUp {
