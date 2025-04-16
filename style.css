@@ -222,50 +222,154 @@ img {
     border-bottom: none;
 }
 
+/* Enhanced Page Title for Events */
 .page-title {
     text-align: center;
-    padding: 2rem 0 1rem 0;
-    border-bottom: 1px solid #eee;
-    margin-bottom: 2rem;
+    padding: 3rem 0 2rem 0;
+    margin-bottom: 2.5rem;
+    position: relative;
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
+
+.page-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
 .page-title h2 {
-     margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
+    font-size: 2.4rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.page-title p {
+    max-width: 600px;
+    margin: 0 auto;
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Section headings for events page */
+#upcoming h2, #past-events h2 {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1.8rem;
+    font-size: 1.8rem;
+    padding-bottom: 0.5rem;
+}
+
+#upcoming h2::after, #past-events h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 1.5px;
 }
 
 /* --- Specific Page Sections --- */
 
 /* Events Page */
 .event-item {
-    background-color: #fff;
+    background-color: #fff7f7;
     padding: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    border-left: 5px solid var(--primary-color); /* Accent border */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid var(--primary-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
+
+.event-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
 .event-item h3 {
     margin-bottom: 0.5rem;
     color: var(--primary-color);
+    font-size: 1.4rem;
 }
+
 .event-meta {
     font-size: 0.9rem;
     color: var(--secondary-color);
     margin-bottom: 1rem;
+    display: flex;
+    gap: 1rem;
 }
+
+.event-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.event-description {
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.event-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+}
+
+/* Button styles for events */
 .cta-button-small {
-     display: inline-block;
-    background-color: var(--primary-color);
-    color: #fff;
-    padding: 0.5rem 1rem;
+    display: inline-block;
+    padding: 0.6rem 1rem;
     border-radius: var(--border-radius);
     text-decoration: none;
+    font-weight: bold;
     font-size: 0.9rem;
-    margin-top: 0.5rem;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    background-color: var(--primary-color);
+    color: white;
+    white-space: nowrap; /* Prevent text wrapping */
+    width: fit-content; /* Make button only as wide as content */
 }
+
 .cta-button-small:hover {
-    background-color: var(--primary-color-dark); /* Using the darker color variable instead of darken() function */
+    background-color: var(--primary-color-dark);
     text-decoration: none;
+}
+
+/* Registration not started styling */
+.registration-pending {
+    background-color: transparent;
+    color: var(--secondary-color);
+    border: 1px dashed var(--secondary-color);
+    cursor: not-allowed;
+    opacity: 0.77;
+    position: relative;
+}
+
+.registration-pending:hover {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.registration-pending::after {
+    content: '⏳';
+    margin-left: 0.4rem;
 }
 
 /* Resources Page */
@@ -491,4 +595,3 @@ img {
         transform: translateY(0);
     }
 }
-````
