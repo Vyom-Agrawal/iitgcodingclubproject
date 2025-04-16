@@ -396,8 +396,7 @@ img {
     }
 
     .profile-grid {
-        /* Stack profiles on smaller screens if needed, though auto-fit often handles it */
-        /* grid-template-columns: 1fr; */
+        grid-template-columns: 1fr;
     }
 }
 

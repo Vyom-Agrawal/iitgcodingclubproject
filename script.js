@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Optional: Add smooth scrolling for internal links (if any)
     // Example: (Uncomment if you have internal #links you want to scroll smoothly)
-    /*
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const hrefAttribute = this.getAttribute('href');
@@ -52,6 +52,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    */
+
 
 }); // End of DOMContentLoaded
