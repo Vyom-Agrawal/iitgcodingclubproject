@@ -82,13 +82,21 @@ img {
 
 /* --- Header & Navigation --- */
 .site-header {
-    background-color: var(--header-bg);
+    background-color: rgba(52, 58, 64, 0.9); /* Semi-transparent header */
     color: #fff;
     padding: 1rem 0;
-    position: sticky; /* Make header sticky */
+    position: sticky;
     top: 0;
-    z-index: 1000; /* Ensure header stays on top */
+    z-index: 1000;
     box-shadow: var(--box-shadow);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(5px); /* Adds a blur effect to content behind the header */
+    -webkit-backdrop-filter: blur(5px); /* For Safari support */
+}
+
+.site-header.scrolled {
+    background-color: rgba(52, 58, 64, 0.95); /* More opaque when scrolled */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .header-content {
@@ -97,10 +105,23 @@ img {
     align-items: center;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Space between logo image and text */
+}
+
+.logo img {
+    max-width: 40px; /* Reduce the image size */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: var(--border-radius);
+}
+
 .logo h1 {
     margin: 0;
-    font-size: 1.8rem;
+    font-size: 1.5rem; /* Reduce the text size */
 }
+
 .logo h1 a {
     color: #fff;
     text-decoration: none;
@@ -116,22 +137,23 @@ img {
 }
 
 .main-nav li {
-    margin-left: 1.5rem;
+    margin-left: 0.8rem;
 }
 
 .main-nav a {
     color: var(--nav-link-color);
     text-decoration: none;
     font-weight: bold;
-    padding: 0.5rem 0;
-    transition: color 0.3s ease;
-    border-bottom: 2px solid transparent; /* For active state */
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    border-radius: 20px;
 }
 
 .main-nav a:hover,
 .main-nav a.active {
-    color: var(--nav-hover-color);
-    border-bottom-color: var(--primary-color); /* Highlight active/hover */
+    background-color: var(--primary-color);
+    color: white;
+    border-bottom-color: transparent;
 }
 
 .menu-toggle { /* Hamburger Button */
@@ -146,27 +168,31 @@ img {
 
 /* --- Hero Section (Homepage) --- */
 .hero {
-    background: var(--primary-color) url('./images/hero-background.jpg') no-repeat center center/cover; /* Fixed relative path */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), 
+                url('iitgimage.jpg') no-repeat center center/cover;
+    filter: brightness(1.5); /* Darken the image */
     color: #fff;
     text-align: center;
-    padding: 5rem 1rem;
+    padding: 6rem 1rem;
     min-height: 60vh;
     display: flex;
     align-items: center;
     justify-content: center;
     background-blend-mode: multiply; /* Optional: Darken the background image */
     background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add text shadow for better readability */
 }
 
 .hero h2 {
     font-size: 3rem;
     margin-bottom: 1rem;
     color: #fff; /* Override default h2 color */
+    letter-spacing: 2px; /* Add spacing between letters */
 }
 
 .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+    font-size: 1.4rem;
+    margin-bottom: 2.5rem;
 }
 
 .cta-button {
@@ -313,6 +339,42 @@ img {
     margin-top: 2rem;
 }
 
+/* Quick Links Section */
+
+.quick-links-section {
+    background-color: var(--background-color); /* Light background */
+    padding: 1.5rem 1.5rem;
+    border-radius: var(--border-radius); /* Rounded corners */
+    box-shadow: var(--box-shadow); /* Subtle shadow */
+    animation: fadeInUp 1s ease-in-out; /* Keep the existing animation */
+    margin-top: 2rem; /* Space from the top */
+    margin-bottom: 2rem; /* Space from the bottom */
+}
+.quick-links-section ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    justify-content: left;
+}
+
+.quick-links-section li {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 0.6rem;
+    border-radius: var(--border-radius);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.quick-links-section li:hover {
+    transform: translateY(-5px); /* Lift effect */
+    background-color: var(--primary-color-dark);
+}
+
+.quick-links-section a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: none;
+}
 
 /* --- Footer --- */
 .site-footer {
@@ -408,3 +470,25 @@ img {
     .cta-button { padding: 0.6rem 1.2rem; font-size: 0.9rem;}
     .container { padding: 0 1rem; }
 }
+
+/* --- Animations --- */
+#about {
+    background-color: var(--background-color); /* Light background */
+    padding: 1.5rem 1.5rem;
+    border-radius: var(--border-radius); /* Rounded corners */
+    box-shadow: var(--box-shadow); /* Subtle shadow */
+    animation: fadeInUp 1s ease-in-out; /* Keep the existing animation */
+    margin-top: 2rem; /* Space from the top */
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+````
