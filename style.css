@@ -226,11 +226,12 @@ img {
     margin-top: 50px;
 }
 
-/* Enhanced Page Title for Events */
+/* Enhanced Page Title for all pages - Adjust spacing */
 .page-title {
     text-align: center;
-    padding: 3rem 0 2rem 0;
-    margin-bottom: 2.5rem;
+    padding: 2.5rem 0 1.5rem 0;
+    margin-bottom: 2rem;
+    margin-top: 5px;
     position: relative;
     background-color: #f8f9fa;
     border-radius: var(--border-radius);
@@ -387,13 +388,11 @@ img {
 
 /* Resources Page */
 .resource-category {
-    margin-bottom: 3rem;
-    padding: 1.5rem;
-    border-radius: 8px;
-    background-color: #f8f9fa;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-left: 4px solid #2a3990;
+    margin: 2rem auto;
+    padding: 1.8rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    max-width: 95%; /* Limit width to create spacing from screen edges */
 }
 
 .resource-category:hover {
@@ -576,41 +575,44 @@ img {
     border-radius: 1.5px;
 }
 
-/* Quick Links Section */
-
+/* Quick Links Section - Increased size */
 .quick-links-section {
-    background-color: var(--background-color); /* Light background */
-    padding: 1.5rem 1.5rem;
-    border-radius: var(--border-radius); /* Rounded corners */
-    box-shadow: var(--box-shadow); /* Subtle shadow */
-    animation: fadeInUp 1s ease-in-out; /* Keep the existing animation */
-    margin-top: 2rem; /* Space from the top */
-    margin-bottom: 2rem; /* Space from the bottom */
+    background-color: #f7f7f7;
+    padding: 2.5rem 3rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin: 3rem auto; /* Increase margin */
+    max-width: 72%;
+    
 }
+
+
+.quick-links-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.8rem; /* More space below heading */
+    padding-bottom: 0.5rem;
+    border-bottom: none;
+    font-size: 1.8rem; /* Slightly larger heading */
+}
+
 .quick-links-section ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.7rem;
-    justify-content: left;
+    list-style-type: none;
+    padding-left: 0.5rem;
 }
 
 .quick-links-section li {
-    background-color: var(--primary-color);
-    color: #fff;
-    padding: 0.6rem;
-    border-radius: var(--border-radius);
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.quick-links-section li:hover {
-    transform: translateY(-5px); /* Lift effect */
-    background-color: var(--primary-color-dark);
-}
-
-.quick-links-section a {
-    color: #fff;
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 1rem;
     text-decoration: none;
-    font-weight: none;
+}
+
+.quick-links-section li:before {
+    content: "→";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
 }
 
 /* --- Footer --- */
@@ -733,6 +735,43 @@ img {
         flex-direction: column;
         gap: 5px;
     }
+
+    .resource-category {
+        padding: 1.5rem;
+        margin: 1.5rem 15px;
+        max-width: calc(100% - 30px);
+    }
+    
+    .resource-category ul {
+        padding-left: 1.2rem;
+    }
+    
+    .resource-category li {
+        margin-bottom: 0.8rem;
+        line-height: 1.4;
+    }
+
+    .page-title {
+        padding: 2rem 0 1.2rem 0; /* Reduced from 2.5rem 0 1.5rem 0 */
+        margin-top: 1.5rem; /* Reduced from 2rem */
+        margin-bottom: 1.5rem; /* Reduced from 2rem */
+    }
+    
+    .page-title h2 {
+        font-size: 2rem;
+    }
+    
+    /* Also add space to section headings */
+    #upcoming h2, #past-events h2, 
+    #tutorials h2, #tools h2, #communities h2,
+    #profiles h2 {
+        margin-top: 1rem;
+    }
+    
+    /* Add space to main content sections */
+    main {
+        padding-top: 1rem;
+    }
 }
 
 @media (max-width: 576px) {
@@ -746,6 +785,26 @@ img {
     .container {
         padding-left: 20px;
         padding-right: 20px;
+    }
+
+    .resource-category {
+        padding: 1.2rem;
+        margin: 1.2rem 10px;
+    }
+
+    .page-title {
+        padding: 1.5rem 0 1rem 0; /* Reduced from 2rem 0 1.2rem 0 */
+        margin-top: 2rem; /* Reduced from 3rem */
+        margin-bottom: 1.2rem; /* Reduced from 1.5rem */
+    }
+    
+    .page-title h2 {
+        font-size: 1.8rem;
+    }
+    
+    /* Even more space for main sections on very small screens */
+    main {
+        padding-top: 1.5rem;
     }
 }
 
