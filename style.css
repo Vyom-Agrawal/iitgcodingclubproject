@@ -222,6 +222,10 @@ img {
     border-bottom: none;
 }
 
+.content-section.testimonials {
+    margin-top: 50px;
+}
+
 /* Enhanced Page Title for Events */
 .page-title {
     text-align: center;
@@ -290,15 +294,16 @@ img {
 
 /* Events Page */
 .event-item {
-    background-color: #fefff1;
+    background-color: #fff;
     padding: 1.5rem;
-    margin-bottom: 2rem;
     border-radius: var(--border-radius);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border-left: 5px solid var(--primary-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+    overflow-wrap: break-word; /* Ensures text wraps instead of overflowing */
+    word-wrap: break-word;
+    word-break: break-word; /* Allows breaking of long words */
+    max-width: 100%; /* Ensure it doesn't exceed its container */
 }
 
 .event-item:hover {
@@ -314,8 +319,11 @@ img {
 
 .event-meta {
     font-size: 0.9rem;
-    color: var(--secondary-color);
     margin-bottom: 1rem;
+    color: #6c757d;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto; /* Enables hyphenation */
     display: flex;
     gap: 1rem;
 }
@@ -540,10 +548,13 @@ img {
 .join-us {
     text-align: center;
     background-color: #e6e6e6;
-    padding: 3rem 1rem;
+    padding: 3rem 2rem;
     border-radius: var(--border-radius);
     margin-top: 2rem;
     margin-bottom: 2rem;
+    max-width: 88%; /* Set maximum width */
+    margin-left: auto; /* Center the box */
+    margin-right: auto; /* Center the box */
 }
 
 /* Club Leaders heading on members page */
@@ -686,15 +697,56 @@ img {
     .profile-grid {
         grid-template-columns: 1fr;
     }
+
+    .event-meta {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+    
+    .event-meta strong {
+        display: inline-block;
+        min-width: 50px;
+    }
+    
+    /* Remove the separator on mobile */
+    .event-meta span.separator {
+        display: none;
+    }
+
+    .content-section {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .event-item {
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 1.2rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    .event-meta {
+        font-size: 0.85rem;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
      h1 { font-size: 1.8rem; }
      h2 { font-size: 1.6rem; }
     .hero h2 { font-size: 2rem; }
     .hero p { font-size: 1rem; }
     .cta-button { padding: 0.6rem 1.2rem; font-size: 0.9rem;}
     .container { padding: 0 1rem; }
+
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }
 
 /* --- Animations --- */
