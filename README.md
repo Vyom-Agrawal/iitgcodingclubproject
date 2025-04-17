@@ -41,15 +41,4 @@ This is a purely static website (HTML, CSS, JS). No complex setup or build proce
 2.  **Navigate:** Open the project folder in your file explorer.
 3.  **Open `index.html`:** Double-click the `index.html` file, or right-click and choose "Open with" your preferred web browser (e.g., Chrome, Firefox, Safari, Edge).
 
-The website should now load in your browser.
-
-## Potential Future Improvements
-
-*   **Add Actual Images:** Replace `images/member-placeholder.png` with actual photos of members and potentially add a club logo.
-*   **Dynamic Content:** Load events or member data from a JSON file or a simple API instead of hardcoding it in HTML.
-*   **Contact Form:** Add a functional contact form (would require backend logic or a third-party service like Formspree).
-*   **Enhanced Styling:** Improve the visual design and responsiveness further with more detailed CSS.
-*   **Accessibility Audit:** Review and improve accessibility features (ARIA roles, semantic HTML, color contrast).
-*   **Social Media Links:** Add links to the club's social media profiles in the footer.
-*   **Search Functionality:** Add a search bar, especially if the resources or events list becomes long.
-*   **Add a `LICENSE` file:** Choose an open-source license (like MIT) if you intend for others to use or contribute to the code.
+The website should now load in your browser :)
